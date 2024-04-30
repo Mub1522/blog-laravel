@@ -1,7 +1,8 @@
-@extends('layouts.plantilla')
+<x-layout>
+    <x-slot name="title">
+        {{ __('Post') . $post }}
+    </x-slot>
 
-@section('title', 'Post: ' . {{$post}})
+    <h1>Post {{ $post }}</h1>
 
-@section('content')
-    <h1>Post {{$post}}</h1>
-@endsection
+</x-layout>

@@ -1,7 +1,8 @@
-@extends('layouts.plantilla')
+<x-layout>
+    <x-slot name="title">
+        {{ __('Add Post') }}
+    </x-slot>
 
-@section('title', 'Posts')
-
-@section('content')
     <h1>Add Posts</h1>
-@endsection
+
+</x-layout>

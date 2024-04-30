@@ -6,34 +6,43 @@ use Illuminate\Http\Request;
 
 class PostsController extends Controller
 {
+    /* Index Posts */
     public function index()
     {
         return view('posts.index');
     }
 
+    /* Create Post */
+    public function create()
+    {
+        return view('posts.create');
+    }
+    
+    public function store()
+    {
+        
+    }
+
+    /* Show Post */
     public function show($post)
     {
         return view('posts.show', compact('post'));
     }
 
-    public function create()
+
+    /* Edit Post */
+    public function edit($post)
     {
-        return view('posts.create');
+
     }
 
-    public function store()
+    public function update($post)
     {
+
     }
 
-    public function edit()
-    {
-    }
-
-    public function update()
-    {
-    }
-
-    public function destroy()
+    /* Destroy Post */
+    public function destroy($post)
     {
     }
 }
