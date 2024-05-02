@@ -1,8 +1,8 @@
 <x-layout>
     <x-slot name="title">
-        {{ __('Add Post') }}
+        {{ __('Edit Post') }}
     </x-slot>
 
-    <h1>Add Post</h1>
+    <h1>Edit Posts</h1>
 
 </x-layout>

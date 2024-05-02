@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class PostsController extends Controller
+class PostController extends Controller
 {
     /* Index Posts */
     public function index()
@@ -13,15 +13,16 @@ class PostsController extends Controller
     }
 
     /* Create Post */
+    public function store()
+    {
+        return "Guardado!!";
+    }
+
     public function create()
     {
         return view('posts.create');
     }
-    
-    public function store()
-    {
-        
-    }
+
 
     /* Show Post */
     public function show($post)
@@ -31,18 +32,21 @@ class PostsController extends Controller
 
 
     /* Edit Post */
-    public function edit($post)
-    {
-
-    }
-
     public function update($post)
     {
+        return "Actualizado!!";
 
     }
+
+    public function edit($post)
+    {
+        return view('posts.edit', compact('post'));
+    }
+
 
     /* Destroy Post */
     public function destroy($post)
     {
+        return "Eliminado!!";
     }
 }
