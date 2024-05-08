@@ -7,8 +7,8 @@ use Illuminate\Support\Facades\Route;
 
 /* Home */
 
-Route::get('/', HomeController::class);
-Route::get('/home', HomeController::class)->name('home.invoke');
+Route::get('/', [PostController::class, 'index']);
+// Route::get('/home', HomeController::class)->name('home.invoke');
 
 /* Posts */
 Route::prefix('posts')->name('posts.')->controller(PostController::class)->group(function () {
