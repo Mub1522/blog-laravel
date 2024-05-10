@@ -4,6 +4,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
 use App\Models\Post;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\DB;
 
 /* Home */
 
@@ -19,6 +20,15 @@ Route::prefix('posts')->name('posts.')->controller(PostController::class)->group
     Route::get('/{id}/edit', 'edit')->name('edit');
     Route::put('/{id}', 'update')->name('update');
     Route::delete('/{id}', 'destroy')->name('destroy');
+});
+
+Route::get('/prueba', function () {
+    return DB::table('posts')
+        ->join('users', 'posts.user_id', '=', 'users.id')
+        ->join('categories', 'posts.category_id', '=', 'categories.id')
+        ->select('posts.*', 'users.name as user', 'categories.name as category')
+        ->get();
+    // return $users;
 });
 
 /* 
