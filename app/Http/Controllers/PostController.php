@@ -9,6 +9,7 @@ class PostController extends Controller
     /* Index Posts */
     public function index()
     {
+        
         return view('posts.index');
     }
 
