@@ -23,12 +23,13 @@ Route::prefix('posts')->name('posts.')->controller(PostController::class)->group
 });
 
 Route::get('/prueba', function () {
-    return DB::table('posts')
+    $posts = DB::table('posts')
         ->join('users', 'posts.user_id', '=', 'users.id')
         ->join('categories', 'posts.category_id', '=', 'categories.id')
         ->select('posts.*', 'users.name as user', 'categories.name as category')
-        ->get();
-    // return $users;
+        ->paginate(10);
+
+    return view('prueba', compact('posts'));
 });
 
 /* 
